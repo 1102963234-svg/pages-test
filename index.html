@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一个简单的 GitHub Pages 测试网页。">
+  <meta name="theme-color" content="#244bff">
+  <title>你好，世界 · 网页测试</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23244bff'/%3E%3Cpath d='m16 12-8 8 8 8m8-16 8 8-8 8' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; color: #17233c; background: #f4f6fc; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    main { width: min(100%, 520px); padding: 56px 44px 36px; background: #fff; border: 1px solid #e3e8f2; border-radius: 20px; box-shadow: 0 20px 70px -35px #244bff40; }
+    .icon { width: 48px; height: 48px; display: grid; place-items: center; color: #fff; background: #244bff; border-radius: 13px; font: 600 22px ui-monospace, monospace; }
+    .label { margin: 30px 0 13px; color: #244bff; font: 500 12px ui-monospace, monospace; letter-spacing: 2px; }
+    h1 { margin: 0; font-size: clamp(30px, 7vw, 42px); line-height: 1.4; letter-spacing: -1px; }
+    .description { margin: 16px 0 27px; font-size: 16px; line-height: 1.9; color: #667189; }
+    button { border: 0; border-radius: 8px; padding: 13px 24px; background: #244bff; color: #fff; font-family: inherit; font-size: 16px; font-weight: 500; cursor: pointer; }
+    button:hover { background: #173cde; }
+    button:focus-visible { outline: 3px solid #ffb52e; outline-offset: 4px; }
+    #result { min-height: 24px; margin: 17px 0 28px; color: #244bff; font-size: 14px; line-height: 1.8; }
+    footer { padding-top: 22px; border-top: 1px solid #e8ecf4; color: #7b869a; font: 12px ui-monospace, monospace; letter-spacing: 1px; }
+    @media (max-width: 420px) { main { padding: 36px 25px 28px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="icon" aria-hidden="true">&lt;/&gt;</div>
+    <p class="label">MY FIRST PAGE</p>
+    <h1>你好，世界。</h1>
+    <p class="description">这是一个最简单的网页，<br>用来测试 GitHub Pages 发布。</p>
+    <button id="test-button" type="button">点一下试试</button>
+    <p id="result" role="status" aria-live="polite">等待你的第一次点击。</p>
+    <footer>HTML + CSS + A LITTLE JAVASCRIPT</footer>
+  </main>
+  <script>
+    let count = 0;
+    document.getElementById('test-button').addEventListener('click', () => {
+      count += 1;
+      document.getElementById('result').textContent = `点击成功！你已经点了 ${count} 次。`;
+    });
+  </script>
+</body>
+</html>
